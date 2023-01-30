@@ -12,7 +12,7 @@
     <ul>
       <% develops.forEach(develop => { %>
       <li>
-        Name:<%= develop.text %>- <%= develop.skill ? "Skilled": "Not Skilled"
+        <a href="/develops/<%= develop._id %> "> Developer</a>:<%= develop.text %>- <%= develop.skill ? "Skilled": "Not Skilled"
         %>
       </li>
       <% }) %>

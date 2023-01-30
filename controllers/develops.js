@@ -25,8 +25,21 @@ function create(req, res) {
     })
     .catch((error) => {
       console.log(error);
-      res.redirect("/todos");
+      res.redirect("/develops");
     });
 }
 
-export { index, newDevelop as new, create };
+function show(req, res) {
+  Develop.findById(req.params.id)
+    .then((develops) => {
+      res.render("develops/show", {
+        develops:develops,
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+      res.redirect("/develops");
+    });
+}
+
+export { index, newDevelop as new, create,show };
