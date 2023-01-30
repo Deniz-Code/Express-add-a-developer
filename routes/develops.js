@@ -5,5 +5,6 @@ const router = Router();
 /* GET users listing. */
 
 router.get("/", developsCtrl.index);
-
+router.get("/new",developsCtrl.new)
+router.post("/",developsCtrl.create)
 export { router };

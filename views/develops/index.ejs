@@ -6,5 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DEVELOPS</title>
   </head>
-  <body></body>
+  <body>
+    <a href="/">Go back</a>
+    <h1>Hello</h1>
+    <ul>
+      <% develops.forEach(develop => { %>
+      <li>
+        Name:<%= develop.text %>- <%= develop.skill ? "Skilled": "Not Skilled"
+        %>
+      </li>
+      <% }) %>
+    </ul>
+    <a href="/develops/new">Add a developer</a>
+  </body>
 </html>

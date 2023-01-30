@@ -9,8 +9,24 @@ function index(req, res) {
     })
     .catch((error) => {
       console.log(error);
+      res.redirect("/develops");
+    });
+}
+
+function newDevelop(req, res) {
+  res.render("develops/new");
+}
+
+function create(req, res) {
+  req.body.skill = true;
+  Develop.create(req.body)
+    .then((develop) => {
+      res.redirect("/develops");
+    })
+    .catch((error) => {
+      console.log(error);
       res.redirect("/todos");
     });
 }
 
-export{index}
+export { index, newDevelop as new, create };
